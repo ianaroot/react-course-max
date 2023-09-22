@@ -12,7 +12,7 @@ const ExpenseForm = () => {
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: new Date(enteredDate)
+      date: new Date(enteredDate + " PST")
     };
     setEnteredAmount('');
     setEnteredTitle('');
@@ -26,7 +26,8 @@ const ExpenseForm = () => {
     setEnteredAmount(event.target.value)
   };
   const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value)
+    console.log(event.target.value)
+    setEnteredDate(event.target.value )
   };
 
   return( <form onSubmit={submitHandler}>
