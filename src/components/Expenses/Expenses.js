@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Card from '../UI/Card';
 import ExpenseItem from './ExpenseItem';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesChart from './ExpensesChart';
 
 function Expenses(props) {
   const [yearFilter, setYearFilter] = useState("2021");
@@ -35,6 +36,7 @@ function Expenses(props) {
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={yearFilter} onChangeYearFilter={yearFilterHandler}/>
+        <ExpensesChart expenses={filteredExpenses}/>
         { expenseContent}
         <p>Data for years {yearFilterText} is hidden</p>
 
